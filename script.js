@@ -13,7 +13,6 @@ const openModal = function() {
 const closeModal = function() {
   modal.classList.add('hidden');
   overlay.classList.add('hidden');
-
 }
 
 for (let i = 0; i < btnsShow.length; i++){
@@ -25,9 +24,7 @@ btnClose.addEventListener('click', closeModal);
 overlay.addEventListener('click', closeModal);
 //closing modal when pressing Esc
 document.addEventListener('keydown', function(event){
-  if (event.key === 'Escape') {
-    if (!modal.classList.contains('hidden')) {
-      closeModal();
-    }
+  if (event.key === 'Escape' && !modal.classList.contains('hidden')) {
+    closeModal();
   }
 });
