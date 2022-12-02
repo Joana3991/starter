@@ -19,5 +19,15 @@ const closeModal = function() {
 for (let i = 0; i < btnsShow.length; i++){
   btnsShow[i].addEventListener('click', openModal);
 }
+//open modal when clicking in one of the 3 buttoms
 btnClose.addEventListener('click', closeModal);
+//closing modal when clicking on X
 overlay.addEventListener('click', closeModal);
+//closing modal when pressing Esc
+document.addEventListener('keydown', function(event){
+  if (event.key === 'Escape') {
+    if (!modal.classList.contains('hidden')) {
+      closeModal();
+    }
+  }
+});
